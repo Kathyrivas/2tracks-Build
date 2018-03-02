@@ -1,0 +1,41 @@
+5.times do
+  sample y ,amp:x
+  sleep 2
+  sample y , amp:x
+  sleep 2
+  x = x + 1
+end
+
+use_bpm 120
+use_synth :fm
+use_synth_defaults sustain: 0.25
+
+live_loop :white_stripes do
+  play :e3
+  sleep 1.5
+  play :e3
+  sleep 0.5
+  play :g3
+  sleep 0.75
+  play :e3
+  sleep 0.25
+  play :r # this is a "rest" which does not play any sound
+  sleep 0.5
+  play :d3
+  sleep 0.5
+  play :c3
+  sleep 2
+  play :b2
+  sleep 2
+end
+
+
+10.times do :amen_break
+  sample :loop_amen, beat_stretch:2, rate: -1
+  sleep 4
+end
+
+15.times do
+  sample :drum_heavy_kick
+  sleep 1
+end
